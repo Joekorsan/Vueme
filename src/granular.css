@@ -96,12 +96,62 @@ body{
   "videoList videoList videoList videoList videoList";
   height: calc(100vh);
 }
+.container-channel{
+  margin-top:15px;
+  position:relative;
+  display :grid;
+  grid-template-columns: repeat(5,1fr);
+  /* grid-template-rows: [row1-start] auto [row2-start] 500px [row3-start] auto [last] */
+  grid-template-rows: 20vh  40vh  40vh;
+  grid-template-areas:
+  "friendNav friendNav friendNav friendNav friendNav"
+  "videoList videoList videoList videoList videoList"
+  "chatContainer chatContainer chatContainer chatContainer chatContainer";
+
+  height: 100vh;
+}
 .friendNav{
   grid-area: friendNav;
   /* background: #e74c3c; */
 }
 .title{
   grid-area: title;
+}
+.video-view{
+  grid-area: videoList;
+}
+.video-view > video{
+  height:40vh;
+  width:100%;
+  margin-top:20px;
+  border-radius:5px;
+  background: #e74c3c;
+}
+.video-view > iframe{
+  height:40vh;
+  width:90%;
+  margin-left:5%;
+  margin-top:20px;
+  outline:none;
+  border-radius:5px;
+  background: #e74c3c;
+}
+.chat-container{
+  grid-area: chatContainer;
+}
+.msg-container{
+  width:90%;
+  height: 40%;
+  margin-top:25px;
+  overflow:scroll;
+  overflow-y: auto;
+
+}
+.msg-container > .msg-foreign{
+  opacity:.9;
+}
+.msg-container > .msg-user{
+  opacity:.9;
 }
 .video-list{
   grid-area: videoList;
@@ -114,6 +164,7 @@ body{
   margin-top:20px;
   border-radius:5px;
   background: #e74c3c;
+  cursor:pointer;
 }
 .video-list .add-video{
   width:90%;

@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import FriendList from './FriendList';
 import ActiveChannelList from './ActiveChannelList';
 import Search from './Search';
-
+import Title from './Title.js'
 class Home extends Component {
+  clickedVideo = ()=>{
+    this.props.clickedVideo();
+  }
   render() {
     return (
       <div className="ContainerHome">
         {/* <Search /> */}
         <FriendList />
-        <div class="title  item-top  text-center color-white font-mild ">
-          Recommended Videos
-        </div>
-        <ActiveChannelList />
+        <Title />
+        <ActiveChannelList videoClicked={()=>this.clickedVideo()}/>
       </div>
     );
   }

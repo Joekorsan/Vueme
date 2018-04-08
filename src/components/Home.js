@@ -6,9 +6,12 @@ import Search from './Search';
 class Home extends Component {
   render() {
     return (
-      <div>
-        <Search />
+      <div className="ContainerHome">
+        {/* <Search /> */}
         <FriendList />
+        <div class="title  item-top  text-center color-white font-mild ">
+          Recommended Videos
+        </div>
         <ActiveChannelList />
       </div>
     );

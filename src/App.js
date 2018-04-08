@@ -15,7 +15,21 @@ class App extends Component {
       endpoint:"http://localhost:8080",
       message:'',
       messageList:[],
-      videoIsShowing: false
+      videoIsShowing: false,
+      channelList: [],
+      currentUrl: ''
+    }
+    componentWillMount =  ()=>{
+      axios('http://localhost:8080/channels')
+      .then((res)=>{
+        console.log(res.data);
+        let channelList = [];
+        res.data.forEach((channel)=>{
+
+          channelList.push(channel.video_url)
+        })
+        this.setState({channelList});
+      })
     }
 
     addMessage = (newMessage) => {
@@ -35,11 +49,12 @@ class App extends Component {
       });
     }
 
-    toggleVideo = () =>{
+    toggleVideo = (url) =>{
       let videoIsShowing = !this.state.videoIsShowing;
-      console.log("called");
-      this.setState({videoIsShowing})
+      console.log("called",url);
+      this.setState({videoIsShowing: videoIsShowing, currentUrl: url})
     }
+
 
     render() {
       console.log("msgList",this.state.messageList);
@@ -50,7 +65,7 @@ class App extends Component {
           messageList: message
         });
       });
-      let content = this.state.videoIsShowing ? <ChannelContainer addMessage={this.addMessage} msgList={this.state.messageList}/> :  <Home clickedVideo = {()=>this.toggleVideo()}/>;
+      let content = this.state.videoIsShowing ? <ChannelContainer  addMessage={this.addMessage} msgList={this.state.messageList} url={this.state.currentUrl}/> :  <Home channelList={this.state.channelList}  clickedVideo = {(url)=>this.toggleVideo(url)}/>;
       return (
         <div className="">
           <div className='nav-bar bg-transparent color-white'>

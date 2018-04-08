@@ -127,6 +127,13 @@ body{
   border-radius:5px;
   background: #e74c3c;
 }
+.video-view .youtube{
+  height:40vh;
+  width:100%;
+  margin-top:20px;
+  border-radius:5px;
+  background: #e74c3c;
+}
 .video-view > iframe{
   height:40vh;
   width:90%;

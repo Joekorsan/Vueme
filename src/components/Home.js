@@ -4,8 +4,8 @@ import ActiveChannelList from './ActiveChannelList';
 import Search from './Search';
 import Title from './Title.js'
 class Home extends Component {
-  clickedVideo = ()=>{
-    this.props.clickedVideo();
+  clickedVideo = (url)=>{
+    this.props.clickedVideo(url);
   }
   render() {
     return (
@@ -13,7 +13,7 @@ class Home extends Component {
         {/* <Search /> */}
         <FriendList />
         <Title />
-        <ActiveChannelList videoClicked={()=>this.clickedVideo()}/>
+        <ActiveChannelList channelList={this.props.channelList} videoClicked={(url)=>this.clickedVideo(url)}/>
       </div>
     );
   }

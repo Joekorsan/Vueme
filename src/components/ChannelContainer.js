@@ -16,7 +16,7 @@ class ChannelContainer extends Component{
           <div className="friend-nav-pic item-center"></div>
           <div className="friend-nav-pic item-center"></div>
         </div>
-        <ChannelVideo />
+        <ChannelVideo url={this.props.url}/>
         <ChatContainer passMessage={(msg)=>this.passMessage(msg)} msgList = {this.props.msgList}/>
       </div>
     )

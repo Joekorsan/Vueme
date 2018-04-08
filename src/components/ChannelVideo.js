@@ -53,17 +53,22 @@ class ChannelVideo extends Component{
     }
 
   render(){
+
+
+    let key = this.props.url.replace("https://www.youtube.com/watch?v=",'')
+
     return(
       <div className="video-view grid-col-1 grid-row-2">
         {/* <iframe src="https://www.youtube.com/embed/M7q9hz-QpxA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> */}
-        <button onClick={this.twinPlay}>Play</button>
+        {/* <button onClick={this.twinPlay}>Play</button>
         <button onClick={this.pause}>Pause</button>
-        <button onClick={this.stop}>Stop</button>
+        <button onClick={this.stop}>Stop</button> */}
       <YouTube
             key="212cdsdc121"
-            videoId="M7q9hz-QpxA"
+            videoId={key}
             opts={this.state.opts1}
             onReady={this.onReady}
+            className='youtube'
       />
 
       </div>

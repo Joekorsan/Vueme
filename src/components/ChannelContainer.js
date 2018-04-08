@@ -3,6 +3,9 @@ import ChannelVideo from './ChannelVideo'
 import ChatContainer from './ChatContainer'
 
 class ChannelContainer extends Component{
+  state = {
+    videoId: "M7q9hz-QpxA"
+  }
   passMessage = (msg)=>{
     this.props.addMessage(msg);
     console.log(msg);
@@ -16,7 +19,7 @@ class ChannelContainer extends Component{
           <div className="friend-nav-pic item-center"></div>
           <div className="friend-nav-pic item-center"></div>
         </div>
-        <ChannelVideo url={this.props.url}/>
+        <ChannelVideo url={this.props.url} vidId={this.state.videoId}/>
         <ChatContainer passMessage={(msg)=>this.passMessage(msg)} msgList = {this.props.msgList}/>
       </div>
     )

@@ -6,9 +6,9 @@ class ChatList extends Component {
     let msgList = this.props.msgList;
     msgList = msgList.length
       ? msgList.map((message, indx) =>{
-        return <li  key={indx} className="msg-foreign item-center grid-col-8 grid-row-1">
+        return <li  key={indx} className="msg-foreign item-left grid-col-8 grid-row-1">
           <div className="rw-sz-2 col-sz-1 item-left">
-            <img className="user-pic edges-weak  " src="profile_pic.jpg"></img>
+            <img className="user-pic edges-weak  " src="https://image.flaticon.com/icons/png/128/149/149072.png"></img>
           </div>
           <div className="item-left col-sz-3">{message}</div>
         </li>

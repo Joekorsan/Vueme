@@ -6,6 +6,19 @@ body{
   background: #c0392b ;
   /* src: url(PT_Sans-Narrow-Web-Regular.woff); */
 }
+.user-pic{
+  width:50px;
+  height:50px;
+}
+.video-control-container {
+  background:none;
+  opacity:.9;
+  position:absolute;
+  top:calc(60vh - 10px);
+}
+.video-control-container > button{
+  height: 30px;
+}
 /* Form Structure */
 /*Form*/
 .form{
@@ -119,6 +132,7 @@ body{
 }
 .video-view{
   grid-area: videoList;
+  z-index:100;
 }
 .video-view > video{
   height:40vh;
@@ -133,6 +147,7 @@ body{
   margin-top:20px;
   border-radius:5px;
   background: #e74c3c;
+  z-index: 200;
 }
 .video-view > iframe{
   height:40vh;
@@ -198,6 +213,19 @@ body{
   background:white;
   transition: .85s;
 }
+.friend-nav-pic img{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+}
+/* .friend-nav-pic{
+  width:100px;
+  height:100px;
+  border-radius: 50%;
+  background:white;
+  transition: .85s;
+  background-image: url("https://image.flaticon.com/icons/png/128/145/145867.png")
+} */
 .friend-nav-pic:hover{
   cursor: pointer;
   width:120px;

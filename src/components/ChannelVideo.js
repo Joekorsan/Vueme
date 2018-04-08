@@ -96,9 +96,6 @@ class ChannelVideo extends Component{
     return(
       <div className="video-view grid-col-1 grid-row-2">
         {/* <iframe src="https://www.youtube.com/embed/M7q9hz-QpxA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> */}
-        <button onClick={this.twinPlay}>Play</button>
-        <button onClick={this.pause}>Pause</button>
-        <button onClick={this.stop}>Stop</button>
           <YouTube
                 key="212cdsdc121"
                 videoId={key}
@@ -106,6 +103,11 @@ class ChannelVideo extends Component{
                 onReady={this.onReady}
                 className='youtube'
           />
+          <div className="video-control-container item-right ">
+            <button className="no-style" onClick={this.twinPlay}>Play</button>
+            <button className="no-style" onClick={this.pause}>Pause</button>
+            <button className="no-style"onClick={this.stop}>Stop</button>
+          </div>
       </div>
     )
   }
